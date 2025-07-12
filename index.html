@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Gato con Plantas</title>
+<style>
+  body {
+    margin: 0;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .container {
+    position: relative;
+    text-align: center;
+  }
+
+  #cat {
+    width: 200px;
+    cursor: pointer;
+    z-index: 10;
+    position: relative;
+  }
+
+  #text-top {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-style: italic;
+    font-weight: bold;
+    display: none;
+    color: black;
+    user-select: none;
+    pointer-events: none;
+  }
+
+  #text-bottom {
+    margin-top: 10px;
+    font-style: italic;
+    font-weight: bold;
+    display: none;
+    color: black;
+    user-select: none;
+  }
+
+  .plant {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    fill: green;
+    opacity: 0.6;
+    user-select: none;
+  }
+
+  .plant1 { top: 10%; left: 15%; transform: rotate(15deg); }
+  .plant2 { top: 20%; right: 20%; transform: rotate(-10deg); }
+  .plant3 { bottom: 15%; left: 10%; transform: rotate(5deg); }
+  .plant4 { bottom: 20%; right: 15%; transform: rotate(-5deg); }
+  .plant5 { top: 50%; left: 5%; transform: rotate(20deg); }
+  .plant6 { top: 50%; right: 5%; transform: rotate(-20deg); }
+  .plant7 { top: 30%; left: 40%; transform: rotate(10deg); }
+  .plant8 { bottom: 40%; right: 35%; transform: rotate(-15deg); }
+</style>
+</head>
+<body>
+
+<svg class="plant plant1" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <path d="M32 2 L40 30 L32 62 L24 30 Z"/>
+</svg>
+<svg class="plant plant2" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="30" />
+</svg>
+<svg class="plant plant3" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="32" cy="32" rx="15" ry="30" />
+</svg>
+<svg class="plant plant4" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <rect x="20" y="10" width="24" height="44" rx="12" ry="22"/>
+</svg>
+<svg class="plant plant5" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <polygon points="32,4 40,30 24,30" />
+</svg>
+<svg class="plant plant6" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <path d="M10 54 L54 10 L54 54 Z" />
+</svg>
+<svg class="plant plant7" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="32" cy="32" r="12" />
+</svg>
+<svg class="plant plant8" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <ellipse cx="32" cy="32" rx="18" ry="10" />
+</svg>
+
+<div class="container">
+  <div id="text-top">Oda mi mami</div>
+  <img id="cat" src="https://img.freepik.com/vector-premium/gato-blanco-negro-nariz-rosa-corazon-blanco-su-cara_1169008-939.jpg?w=740" alt="Gato" />
+  <div id="text-bottom">TEAMOOOO</div>
+</div>
+
+<script>
+  const cat = document.getElementById('cat');
+  const textTop = document.getElementById('text-top');
+  const textBottom = document.getElementById('text-bottom');
+
+  cat.addEventListener('click', () => {
+    const isVisible = textTop.style.display === 'block';
+    if (isVisible) {
+      textTop.style.display = 'none';
+      textBottom.style.display = 'none';
+    } else {
+      textTop.style.display = 'block';
+      textBottom.style.display = 'block';
+    }
+  });
+</script>
+
+</body>
+</html>
